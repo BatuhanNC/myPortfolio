@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4cac67ab94.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="images/my-profile.jpeg">
+    <title>Batuhan Çam</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Rubik+Iso&family=Tilt+Prism&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        @keyframes bodyAnimate {
+
+            0%,
+            100% {
+                background-position: 0 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        header h3 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            position: relative;
+            min-height: 20px;
+        }
+
+        header p:before {
+            content: " ";
+            width: 3px;
+            height: 23px;
+            position: absolute;
+            background: #fff;
+            bottom: 2px;
+            right: -5px;
+            animation: animate .7s infinite;
+            transition: 2s all ease;
+        }
+
+        @keyframes animate {
+            to {
+                opacity: 0;
+            }
+
+            from {
+                opacity: 1;
+            }
+        }
+
+        header .profile {
+            max-width: 150px;
+            width: 100%;
+            height: 150px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: 1s all ease !important;
+            border: 2px solid #fff;
+            position: relative;
+        }
+
+        header .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 400ms all ease-in-out;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        header .profile:hover img {
+            transform: scale(1.5);
+            right: 0 !important;
+            bottom: 0;
+            left: -25%;
+            top: 25%;
+        }
+
+        header .profile:hover {
+            border-radius: 10px;
+            height: 170px;
+        }
+
+        hr {
+            max-width: 350px;
+            width: 100%;
+            border-top: 1px solid #fff;
+            margin: 15px 0;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            font-size: 20px;
+            width: 50%;
+            margin: auto;
+            min-height: 100px;
+        }
+
+        .content h2 {
+            max-width: 490px;
+            width: 100%;
+            padding: 5px;
+            background: rgba(0 0 0 / 50%);
+            box-shadow: 0 0 5px #000;
+            margin-top: 40px;
+            text-transform: capitalize;
+            font-family: 'Tilt Prism', cursive;
+        }
+
+        .content hr {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .content span {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            color: #cbe7f3;
+        }
+
+        .content span h6 {
+            position: absolute;
+            right: 2px;
+            bottom: 0;
+            opacity: .8;
+        }
+
+        .content span h5 {
+            text-transform: capitalize;
+            border: 1px solid #b9aeba;
+            padding: 5px 0;
+            border-radius: 5px;
+        }
+
+        .content span ul li {
+            list-style: none;
+            border: 1px solid #b9aeba;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+            text-transform: capitalize;
+            color: #cbe7f3;
+            transition: 100ms all ease;
+        }
+
+        .content span ul li:hover,
+        .content span h5:hover {
+            border-width: 2px;
+            border-color: #fff;
+            background: rgba(255 255 255 / 20%);
+            color: #fff;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 5px 0;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-size: 16px;
+            color: #fff;
+            font-family: 'Rubik Iso', cursive;
+        }
+
+        footer hr {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        header .username {
+            font-family: 'Rubik Iso', cursive;
+        }
+
+        @media only screen and (max-width:720px) {
+            body {
+                padding: 0 10px;
+                overflow-x: hidden;
+            }
+
+            .content {
+                margin: unset;
+                width: 100%;
+            }
+
+            hr {
+                margin: 10px 0;
+            }
+
+            header h3 {
+                flex-wrap: wrap;
+            }
+        }
+
+        #tr,
+        #en {
+            width: 100%;
+            position: relative;
+            margin-top: -100vh;
+            padding: 50px 0;
+        }
+
+        .language {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        .language input {
+            padding: 0 2px;
+        }
+    </style>
+    <script>
+        let language = navigator.language || navigator.userLanguage;
+    </script>
+</head>
+
+<body>
+    <div class="language">
+        <input type="submit" value="TR">
+        <input type="submit" value="TR">
+    </div>
+    <!-- <div id="en">
+        <header>
+            <div class="profile">
+                <img src="images/my-profile.jpeg" alt="">
+            </div>
+            <h3>Hello<i class="fa-solid fa-hand"></i>&nbsp; I am &nbsp;<p class="username"></p>
+            </h3>
+            <h6>I am an excited and curious student</h6>
+            <hr>
+            <h6>Please use this page to get a first impression of me!</h6>
+            <hr>
+        </header>
+
+
+        <div class="content">
+            <h2>Profile</h2>
+            <hr>
+            <span>
+                <h5>
+                    I am a student who is willing and open to learning in the field of web design.
+                    As a computer programming student at Kahramanmaraş Sütçü Iman University,
+                    I have been developing myself in frontend technologies for 2 years.
+                    I will be able to apply my knowledge and skills and develop myself further,
+                    I am looking for a new role in my career where I can develop further.
+                </h5>
+            </span>
+            <h2>education</h2>
+            <hr>
+            <span>
+                <h5>
+                    Kahramanmaraş Sütçü İmam University - Computer Programming Onikisubat/Kahramanmaraş
+                    <h6>2021 - 2023</h6>
+                </h5>
+            </span>
+            <br>
+            <span>
+                <h5>
+                    şehit idari ataşe galip özmen mesleki ve teknik anadolu high school - information technologies
+                    Onikisubat/Kahramanmaraş
+                    <h6>2017 - 2021</h6>
+                </h5>
+            </span>
+            <h2>Personal characteristics</h2>
+            <hr>
+            <span>
+                <ul>
+                    <li>
+                        ambitious
+                    </li>
+                    <li>
+                        curious
+                    </li>
+                    <li>
+                        enthusiastic
+                    </li>
+                    <li>
+                        open to learning
+                    </li>
+                    <li>
+                        excited
+                    </li>
+                    <li>
+                        innovator
+                    </li>
+                </ul>
+            </span>
+            <h2>communication</h2>
+            <hr>
+            <span>
+                <ul>
+                    <li>
+                        <i class="fa-brands fa-github"></i>&nbsp;github
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-linkedin-in"></i>&nbsp;linkedin
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-instagram"></i>&nbsp;instagram
+                    </li>
+                    <li style="text-transform:lowercase">
+                        <i class="fa-solid fa-envelope">&nbsp;</i>batuhan@cam.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone">&nbsp;</i> (555)555 55 55
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <footer>
+            <hr>
+            copyright @ by Batuhan Çam
+        </footer>
+    </div> -->
+    <style>
+        .circle {
+            width: 100%;
+            height: 100%;
+            background: black;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .circle li {
+            position: absolute;
+            animation: circleAnimate 25s linear infinite;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            bottom: -150px;
+        }
+
+        .circle li:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 25%;
+            animation-delay: 0s;
+            background: linear-gradient(-45deg, #E83D7F, #24A7D6);
+
+        }
+
+        .circle li:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 10%;
+            animation-delay: 2s;
+            animation-duration: 12s;
+            background: linear-gradient(-45deg, #E83D7F, #24D6AC);
+
+        }
+
+        .circle li:nth-child(3) {
+            width: 20px;
+            height: 20px;
+            left: 80%;
+            animation-delay: 4s;
+            background: linear-gradient(-45deg, #24A7D6, #24D6AC);
+        }
+
+        .circle li:nth-child(4) {
+            width: 60px;
+            height: 60px;
+            left: 40%;
+            animation-delay: 0s;
+            animation-duration: 18s;
+            background: linear-gradient(-45deg, #ED7853, #E83D7F, #24A7D6, #24D6AC);
+        }
+
+        .circle li:nth-child(5) {
+            width: 20px;
+            height: 20px;
+            left: 65%;
+            animation-delay: 0s;
+            background: linear-gradient(-45deg, #ED7853, #E83D7F, #24A7D6, #24D6AC);
+        }
+
+        .circle li:nth-child(6) {
+            width: 150px;
+            height: 150px;
+            left: 75%;
+            animation-delay: 0s;
+            background: linear-gradient(-45deg, #ED7853, #24D6AC);
+        }
+
+        .circle li:nth-child(7) {
+            width: 110px;
+            height: 110px;
+            left: 35%;
+            animation-delay: 0s;
+            background: linear-gradient(-45deg, #24D6AC);
+        }
+
+        .circle li:nth-child(8) {
+            width: 25px;
+            height: 25px;
+            left: 50%;
+            animation-delay: 0s;
+            animation-duration: 45s;
+            background: linear-gradient(-45deg, #ED7853, #E83D7F, #24A7D6, #24D6AC);
+        }
+
+        .circle li:nth-child(9) {
+            width: 15px;
+            height: 15px;
+            left: 20%;
+            animation-delay: 0s;
+            animation-duration: 35s;
+            background: linear-gradient(-45deg, #ED7853, #E83D7F, #24A7D6, #24D6AC);
+        }
+
+        .circle li:nth-child(10) {
+            width: 150px;
+            height: 150px;
+            left: 85%;
+            animation-delay: 0s;
+            animation-duration: 11s;
+            background: linear-gradient(-45deg, #E83D7F);
+        }
+
+        @keyframes circleAnimate {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
+        .circleBack {
+            background: black;
+            position: sticky;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+    <div class="circleBack">
+        <ul class="circle">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    </div>
+    <div id="tr">
+        <header>
+            <div class="profile">
+                <img src="my-profile.jpeg" alt="">
+            </div>
+            <h3>Merhaba<i class="fa-solid fa-hand"></i>&nbsp; Ben &nbsp;<p class="username"></p>
+            </h3>
+            <h6>Heyecanlı ve meraklı bir öğrenciyim</h6>
+            <hr>
+            <h6>Benim hakkımda bir ilk izlenim edinmek için lütfen bu sayfayı kullanın!</h6>
+            <hr>
+        </header>
+
+
+        <div class="content">
+            <h2>Profil</h2>
+            <hr>
+            <span>
+                <h5>
+                    web tasarım alanında istekli ve öğrenmeye açık bir öğrenciyim.
+                    Kahramanmaraş sütçü iman üniversitesi bilgisayar programcılığı öğrencisi olarak,
+                    2 yıldır frontend teknolojileri konusunda kendimi geliştiriyorum.
+                    bilgimi ve becerilerimi uygulayabileceğim ve kendimi daha da geliştirebileceğim,
+                    kariyerimde daha da gelişebileceğim yeni bir rol arıyorum.
+                </h5>
+            </span>
+            <h2>eğitim</h2>
+            <hr>
+            <span>
+                <h5>
+                    Kahramanmaraş Sütçü İmam Üniversitesi - Bilgisayar Programcılığı Onikişubat/Kahramanmaraş
+                    <h6>2021 - 2023</h6>
+                </h5>
+            </span>
+            <br>
+            <span>
+                <h5>
+                    şehit idari ataşe galip özmen mesleki ve teknik anadolu lisesi - bilişim teknolojileri
+                    Onikişubat/Kahramanmaraş
+                    <h6>2017 - 2021</h6>
+                </h5>
+            </span>
+            <h2>kişisel özellikler</h2>
+            <hr>
+            <span>
+                <ul>
+                    <li>
+                        hırslı
+                    </li>
+                    <li>
+                        meraklı
+                    </li>
+                    <li>
+                        hevesli
+                    </li>
+                    <li>
+                        öğrenmeye açık
+                    </li>
+                    <li>
+                        heyecanlı
+                    </li>
+                    <li>
+                        yenilikçi
+                    </li>
+                </ul>
+            </span>
+            <h2>İletişim</h2>
+            <hr>
+            <span>
+                <ul>
+                    <li>
+                        <i class="fa-brands fa-github"></i>&nbsp;github
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-linkedin-in"></i>&nbsp;linkedin
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-instagram"></i>&nbsp;instagram
+                    </li>
+                    <li style="text-transform:lowercase">
+                        <i class="fa-solid fa-envelope">&nbsp;</i>batuhan@cam.com
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone">&nbsp;</i> (555)555 55 55
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <footer>
+            <hr>
+            copyright @ by Batuhan Çam
+        </footer>
+    </div>
+
+    <script>
+        function nameTexter() {
+
+
+            var timer = setInterval(deneme, 300);
+
+            let prg = document.querySelector("p");
+            prg.innerText = " ";
+            let number = 0,
+                objNum = 0,
+                finish = 0,
+                text = "Batuhan";
+
+            function deneme() {
+                let maxNum = text.length;
+                if (number >= maxNum) {
+                    number = 0;
+                    prg.innerText = " ";
+                    objNum++;
+                    if (objNum >= 2) {
+                        objNum = 0;
+                    }
+                }
+                prg.innerText += text[number];
+                number++;
+                finish++;
+                if (finish >= maxNum) {
+                    clearInterval(timer);
+                }
+            }
+        }
+
+        setInterval(nameTexter, 7000);
+
+        window.addEventListener("load", browserLanguage);
+        function browserLanguage() {
+            let tr = document.querySelector('#tr');
+            let en = document.querySelector('#en');
+            let htmlElement = document.querySelector("html");
+            var userLang = navigator.language || navigator.userLanguage;
+
+            if (userLang == "tr" || userLang == "tr-TR") {
+                en.style.display = "none";
+            }
+            else {
+                tr.style.display = "none";
+                htmlElement.setAttribute("lang", "en");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
